@@ -1,0 +1,58 @@
+<!-- Title bar -->
+<div role="banner">
+  <a routerLink="home">
+    <mat-toolbar class="title-bar">
+      <span>{{title}}</span>
+    </mat-toolbar>
+  </a>
+</div>
+
+<mat-drawer-container class="sidenav-container" autosize>
+  <mat-drawer class="sidenav" mode="side" opened="true">
+    <div class="sidenav-items">
+      <!-- Home icon-->
+      <a routerLink="home" class="sidenav-item">
+        <span class="material-symbols-outlined">home</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Home</b></span>
+      </a>
+      <!-- Account icon -->
+      <a routerLink="account" class="sidenav-item">
+        <span class="material-symbols-outlined">person</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Accounts</b></span>
+      </a>
+      <!-- CS Monitoring icon -->
+      <a routerLink="under-development" class="sidenav-item">
+        <span class="material-symbols-outlined">analytics</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>CS Monitoring</b></span>
+      </a>
+      <!-- Lan map icon -->
+      <a routerLink="under-development" class="sidenav-item">
+        <span class="material-symbols-outlined">lan</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Lan map</b></span>
+      </a>
+      <!-- Description icon -->
+      <a routerLink="descriptions" class="sidenav-item">
+        <span class="material-symbols-outlined">description</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Descriptions</b></span>
+      </a>
+
+      <!-- Related sites icon -->
+      <a routerLink="related-sites" class="sidenav-item">
+        <span class="material-symbols-outlined">open_in_new</span>
+        <span *ngIf="expanded" class="sidenav-descriptions"><b>Related Sites</b></span>
+      </a>
+
+      <!-- Expanded icon -->
+      <div class="expanded">
+        <span *ngIf="!expanded" (click)="expanded = !expanded"
+              class="material-symbols-outlined expanded_icon">start</span>
+        <span *ngIf="expanded" (click)="expanded = !expanded" style="transform: scale(-1, 1);"
+              class="material-symbols-outlined expanded_icon">start</span>
+      </div>
+    </div>
+  </mat-drawer>
+  <app-loading></app-loading>
+  <div class="main-contents">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

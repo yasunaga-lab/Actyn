@@ -1,0 +1,84 @@
+
+.index-area {
+  padding-bottom: 20px;
+}
+
+.indexes {
+  padding: 20px 40px;
+
+  font-size: 15px;
+  border: 1px solid #06C755;
+  border-radius: 10px;
+}
+
+.index-item a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.index-item :hover {
+  color: #06C755;
+  /*text-decoration: underline;*/
+}
+
+.description-area {
+  padding: 20px 0;
+}
+
+.description {
+  color: #777;
+  padding-left: 10px;
+}
+
+.description h3 {
+  color: #24292e;
+  /*padding-left: 10px;*/
+}
+
+.description a {
+  color: #24292e;
+  text-decoration: underline;
+}
+
+.note {
+  color: #f22;
+}
+
+.concrete {
+  color: #24292e;
+  padding-left: 30px;
+  word-break: break-all;
+}
+
+.text_with_button {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  border-radius: 5px;
+
+  padding-top: 5px;
+}
+
+.copy_button {
+  color: #777777;
+  padding-left: 5px;
+}
+
+.copy_button:hover {
+  color: #24292e;
+  transform: translateY(-2px);
+}
+
+.clipped {
+  color: #06C755;
+}
+
+.check_button {
+  color: #06C755;
+}
+
+/*.copy_button:active {*/
+/*  color: #06C755;*/
+/*  transition-delay: 2s;*/
+/*}*/
+

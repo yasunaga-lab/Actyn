@@ -1,0 +1,42 @@
+
+.account-title {
+  display: flex;
+  align-items: center;
+}
+
+.title-symbol {
+}
+
+.title {
+  padding-left: 1em;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px;
+  width: 340px;
+  height: 130px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.card-header {
+  display: flex;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48;
+  font-size: 50px;
+}
+

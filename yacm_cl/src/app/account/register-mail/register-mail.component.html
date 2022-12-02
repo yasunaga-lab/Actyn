@@ -1,0 +1,48 @@
+<div class="account">
+  <div class="account-title">
+    <span class="material-symbols-outlined title-symbol">mail</span>
+    <h1 class="title">メールアカウント作成</h1>
+  </div>
+  <br>
+  <br>
+  <div class="account-form">
+    <h3>フォームに入力してください</h3>
+    <div *ngIf="infoInvalid" class="error-message">
+      <p>不正な箇所があります。</p>
+    </div>
+    <div>
+      <table class="form-table">
+        <tr>
+          <td>
+            <p>ユーザー名</p>
+            <mat-form-field hintLabel="ex) tacyas" appearance="fill">
+              <mat-label>Account name</mat-label>
+              <input matInput [(ngModel)]="mail.userName" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>パスワード</p>
+            <mat-form-field hintLabel="英数字・記号を含む8文字以上" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="mail.password" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </td>
+        </tr>
+        <br>
+        <br>
+        <tr class="button-area">
+          <td>
+            <button mat-raised-button class="register-button" (click)="register()">登録</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <button (click)="debug()">debug</button>
+</div>

@@ -1,0 +1,6 @@
+server:
+  address: 192.168.4.
+  port:
+ldap-server:
+  address: 192.168.4.10
+  port:

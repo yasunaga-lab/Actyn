@@ -1,0 +1,30 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48;
+  font-size: 50px;
+}
+
+.account-title {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  padding-left: 1em;
+}
+
+.error-message {
+  color: red;
+}
+
+.form-table {
+  /*padding: 20px;*/
+  border-spacing: 10px 15px;
+  justify-content: center;
+}
+
+.button-area {
+  text-align: center;
+}

@@ -1,0 +1,26 @@
+
+.related-sites {
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.related-site {
+  padding-top: 15px;
+}
+
+.title-icon {
+  display: inline-block;
+}
+
+.title {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+
+.description {
+  padding-left: 30px;
+  font-size: 15px;
+  color: #666;
+}

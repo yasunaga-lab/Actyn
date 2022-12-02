@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* select uncolorize */
+a, a:hover, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* font */
+@font-face {
+  font-family: 'LINE';
+  src: url('assets/font/LINE_Seed_JP/Desktop/OTF/LINESeedJP_OTF_Bd.otf') format('opentype');
+}
+
+* {
+  font-family: 'LINE', serif;
+}

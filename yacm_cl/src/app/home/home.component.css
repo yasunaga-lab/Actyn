@@ -1,0 +1,48 @@
+
+.title-area span {
+  color: #000;
+  font-size: 20px;
+}
+
+.title {
+  color: #06C755;
+  font-size: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -55%)
+}
+
+.title-full {
+  color: #666;
+  font-size: 15px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-55%, -55%);
+}
+
+.bug-report {
+  display: flex;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-75%, -50%);
+  font-size: 18px;
+  color: #666;
+  align-items: center;
+}
+
+.bug-report :hover {
+  color: #333333;
+}
+
+.slack-icon {
+  width: 40px;
+  height: auto;
+}
+
+.material-symbols-outlined {
+  padding-right: 5px;
+}

@@ -1,0 +1,119 @@
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.title-bar {
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  displays: flex;
+  align-items: center;
+  background-color: #06C755;
+  color: #fff;
+  font-weight: 600;
+}
+
+.sidenav-container {
+  height: 100%;
+  background-image: url(../assets/images/tacyas_background.png);
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f6f6f6;
+}
+
+.sidenav {
+  position: fixed;
+  padding: 60px 5px 5px;
+  background-color: #06C755;
+  color: white;
+  align-items: center;
+  border: none;
+}
+
+.material-symbols-outlined {
+  color: white;
+  font-size: 30px;
+  font-variation-settings: 'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+.expanded {
+  position: absolute;
+  bottom: 0;
+}
+
+.expanded_icon {
+  padding: 8px;
+  display: flex;
+}
+
+.sidenav-item {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.sidenav-item:hover {
+  /*background-color: #09112a;*/
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.sidenav-descriptions {
+  display: inline-block;
+  text-align: center;
+  padding-left: 1em;
+}
+
+
+.main-contents {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 1200px;
+  /*align-items: center;*/
+  /*justify-content: flex-start;*/
+}
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*@media screen and (max-width: 575px) {*/
+/*  svg#rocket-smoke {*/
+/*    display: none;*/
+/*    visibility: hidden;*/
+/*  }*/
+/*}*/
+
+
