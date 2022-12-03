@@ -1,5 +1,5 @@
 
-<img src="docs/Actyn.png">
+<img src="https://github.com/yasunaga-lab/Actyn/blob/develop/docs/actyn.png">
 
 
 Actyn is administrator of computer throughout yasunaga lab network, 
