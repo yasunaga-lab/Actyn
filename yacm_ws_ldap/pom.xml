@@ -10,11 +10,11 @@
     </parent>
     <groupId>jp.ac.kyutech.bio.yasunaga-lab</groupId>
     <artifactId>yacm_ws_ldap</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>yacm_ws_ldap</name>
     <description>yacm_ws_ldap</description>
     <properties>
-        <java.version>18.0.2</java.version>
+        <java.version>16</java.version>
         <kotlin.version>1.6.21</kotlin.version>
     </properties>
     <dependencies>
@@ -44,6 +44,15 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

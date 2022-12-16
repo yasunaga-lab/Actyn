@@ -10,19 +10,19 @@ import java.io.IOException;
 public class FilesTests {
     @Test
     void filePathTest() {
-        String addTestPath = Files.generateLdifFilePath(Ldap.Manipulation.Add);
+        String addTestPath = Files.generateLdifFilePath(Ldap.Manipulation.Add, "/Users/honda/Downloads/");
         System.out.println(addTestPath);
 
-        String deleteTestPath = Files.generateLdifFilePath(Ldap.Manipulation.Delete);
+        String deleteTestPath = Files.generateLdifFilePath(Ldap.Manipulation.Delete, "/Users/honda/Downloads/");
         System.out.println(deleteTestPath);
 
-        String modifyTestPath = Files.generateLdifFilePath(Ldap.Manipulation.Modify);
+        String modifyTestPath = Files.generateLdifFilePath(Ldap.Manipulation.Modify, "/Users/honda/Downloads/");
         System.out.println(modifyTestPath);
     }
 
     @Test
     void createFileTest() throws IOException, InterruptedException {
         LdapUser testUser = new LdapUser("test", "test TEST", "test_password");
-        Files.createLdifFile(Ldap.Manipulation.Add, testUser);
+        Files.createLdifFile(Ldap.Manipulation.Add, testUser, "/Users/honda/Downloads/");
     }
 }

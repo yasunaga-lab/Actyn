@@ -12,18 +12,18 @@ import java.time.format.DateTimeFormatter;
 // Persistence class by files
 public class Files {
 
+
     // generate ldif file path by using time.
-    public static String generateLdifFilePath(Ldap.Manipulation manipulation) {
-        final String baseLdifFilePath = "/Users/honda/Downloads/";
+    public static String generateLdifFilePath(Ldap.Manipulation manipulation, String ldifFilePath) {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd-HHmm-ss");
         String fileName = dtf.format(now) + "_" + manipulation.name() + ".ldif";
-        return baseLdifFilePath + fileName;
+        return ldifFilePath + fileName;
     }
 
     // Create Ldif file for register Ldap user
-    public static String createLdifFile(Ldap.Manipulation manipulation, LdapUser user) throws IOException {
-        String filePath = generateLdifFilePath(manipulation);
+    public static String createLdifFile(Ldap.Manipulation manipulation, LdapUser user, String ldifFilePath) throws IOException {
+        String filePath = generateLdifFilePath(manipulation, ldifFilePath);
 
         File file = new File(filePath);
 

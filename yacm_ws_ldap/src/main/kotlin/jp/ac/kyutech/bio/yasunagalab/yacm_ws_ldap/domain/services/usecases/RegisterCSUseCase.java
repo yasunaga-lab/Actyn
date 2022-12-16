@@ -1,17 +1,23 @@
 package jp.ac.kyutech.bio.yasunagalab.yacm_ws_ldap.domain.services.usecases;
 
 
+import jp.ac.kyutech.bio.yasunagalab.yacm_ws_ldap.config.LdapConfig;
 import jp.ac.kyutech.bio.yasunagalab.yacm_ws_ldap.domain.models.Ldap;
 import jp.ac.kyutech.bio.yasunagalab.yacm_ws_ldap.domain.models.LdapUser;
 import jp.ac.kyutech.bio.yasunagalab.yacm_ws_ldap.infrastructure.ExternalInterface;
 import jp.ac.kyutech.bio.yasunagalab.yacm_ws_ldap.infrastructure.persistence.Files;
 import jp.ac.kyutech.bio.yasunagalab.yacm_ws_ldap.infrastructure.service.ParseExeCMD;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
 public class RegisterCSUseCase {
+
+    @Autowired
+    private LdapConfig ldapConfig;
+
     private String lastName;
     private String firstName;
     private String accountName;
@@ -60,7 +66,7 @@ public class RegisterCSUseCase {
      */
     public List<String> registerLdapUser() throws IOException, InterruptedException {
         this.createLdapUser();
-        String filePath = Files.createLdifFile(Ldap.Manipulation.Add, this.ldapUser);
+        String filePath = Files.createLdifFile(Ldap.Manipulation.Add, this.ldapUser, ldapConfig.getLdifPath());
         return ExternalInterface.execExternalCommand(Ldap.Commands.generateAddCmd(filePath));
     }
 
