@@ -27,3 +27,12 @@ The purpose is to automate some ~~too tedious, too ridiculous, too easy~~ tasks 
 ### System architecture
 
 ### How to deploy
+👀 replace with ansible
+
+Run prepare deploy shell script
+```shell
+./deploy.sh
+```
+
+memo 
+Reload で404、クライアントの問題？サーバー側のアクセスログは更新されない。
