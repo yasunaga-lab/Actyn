@@ -1,0 +1,68 @@
+### Actyn web server
+- hosts: yacm_ws
+  tasks:
+  - name: Deploy web server.
+    copy: 
+      remote_src: no 
+      src: ../yacm_ws/target/yacm_ws-{{ version }}.jar
+      dest: /root
+      force: yes
+
+  - name: Restart nginx.
+    service: 
+      name: nginx 
+      state: restarted 
+      enabled: yes
+
+  - name: Search already started server.
+    shell: ps -x | grep 'yacm_ws' | grep -v 'grep' | awk '{print $1}'
+    register: pid
+    
+  # - name: Get pid before kill job.
+  #   debug:
+  #     msg: "{{pid}}"
+      
+
+  - name: Kill already started server.
+    shell: kill {{ pid.stdout_lines[0] }}
+    when: pid.stdout != ""
+
+
+  # - name: Search already started server.
+  #   shell: ps -x | grep 'yacm_ws' | grep -v 'grep' | awk '{print $1}'
+  #   register: pid
+
+  # - name: Get pid after kill job.
+  #   debug:
+  #     msg: "{{pid}}"
+
+  - name: Actyn web server start
+    shell: nohup java -jar /root/yacm_ws-{{ version }}.jar &
+
+
+### Actyn ldap node server
+# TODO: make actyn user on each server with same uid  password
+- hosts: yacm_ws_ldap
+  tasks:
+  - name: Deploy ldap node server.
+    copy: 
+      remote_src: no 
+      src: ../yacm_ws_ldap/target/yacm_ws_ldap-{{ version }}.jar
+      dest: /root
+      force: yes
+  
+  - name: Search already started server.
+    shell: ps -x | grep 'yacm_ws_ldap' | grep -v 'grep' | awk '{print $1}'
+    register: pid
+    
+  # - name: Get pid before kill job.
+  #   debug:
+  #     msg: "{{pid}}"
+      
+
+  - name: Kill already started server.
+    shell: kill {{ pid.stdout_lines[0] }}
+    when: pid.stdout != ""
+
+  - name: Actyn ldap node server start
+    shell: nohup java -jar /root/yacm_ws_ldap-{{ version }}.jar &

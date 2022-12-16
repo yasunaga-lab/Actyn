@@ -1,0 +1,18 @@
+---
+all:
+    hosts:
+        yacm_ws:
+            ansible_host: 192.168.4.95
+            ansible_user: "{{ vault_user }}"
+            ansible_password: "{{ vault_easy_password }}"
+            ansible_connect: ssh
+            version: 1.0.0
+        
+        yacm_ws_ldap:
+            ansible_host: 192.168.4.12
+            ansible_user: "{{ vault_user }}"
+            ansible_password: "{{ vault_difficult_password }}"
+            ansible_connect: ssh
+            version: 1.0.0
+            
+
