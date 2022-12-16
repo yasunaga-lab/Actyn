@@ -1,6 +1,6 @@
 server:
-  address: 192.168.4.
-  port:
+  address: localhost
+  port: 8080
 ldap-server:
   address: 192.168.4.10
-  port:
+  port: 80
