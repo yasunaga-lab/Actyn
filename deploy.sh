@@ -20,4 +20,4 @@ cd yacm_ws_ldap/
 cd ../
 
 # deployment by ansible toward each server.
-ansible-playbook -i inventory/actyn_hosts -k actyn-playbook.yml
+ansible-playbook -i ansible/inventory/actyn_hosts -k ansible/actyn-playbook.yml
