@@ -3,4 +3,4 @@ server:
   port: 8081
 
 ldap:
-  ldif_path: "/Users/honda/Downloads/"
+  ldifPath: "/Users/honda/Downloads/"

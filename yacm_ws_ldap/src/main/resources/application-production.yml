@@ -1,6 +1,6 @@
 server:
-  address: localhost
-  port: 8082
+  address: 192.168.4.10
+  port: 8081
 
 ldap:
-  ldif_path: "/root/actyn_ldif"
+  ldifPath: "/root/actyn_ldif"
