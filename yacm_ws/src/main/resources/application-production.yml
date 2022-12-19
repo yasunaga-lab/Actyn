@@ -3,4 +3,4 @@ server:
   port: 8080
 ldap-server:
   address: 192.168.4.10
-  port: 80
+  port: 8080
