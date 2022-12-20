@@ -39,7 +39,6 @@ class Files {
         }
 
         private fun createLdifField(user: LdapUser): String {
-            val field: String
             val dn = "dn: cn=" + user.userName + "," + Ldap.getDomainName()
             val cn = "cn: " + user.userName
             val gidNumber = "gidNumber: " + Ldap.gidNumber
@@ -48,18 +47,7 @@ class Files {
             val uid = "uid: " + user.uid
             val uidNumber = "uidnumber: " + user.uidNumber
             val password = "userpasswprd: " + user.password
-            field = """
-            $dn
-            $cn
-            $gidNumber
-            $userHomeDirectory
-            $loginShell
-            ${Ldap.getObjectClass()}
-            $uid
-            $uidNumber
-            $password
-            """.trimIndent()
-            return field
+            return "$dn\n$cn\n$gidNumber\n$userHomeDirectory\n$loginShell\n${Ldap.getObjectClass()}\n$uid\n$uidNumber\n$password"
         }
     }
 }
