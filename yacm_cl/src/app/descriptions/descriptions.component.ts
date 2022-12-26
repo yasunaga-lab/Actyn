@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Clipboard} from "@angular/cdk/clipboard";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-descriptions',
@@ -13,10 +14,14 @@ export class DescriptionsComponent implements OnInit {
   clipped_yasu = false;
   clipped_mori = false;
 
-  constructor(private clipboard: Clipboard) {
+  constructor(private clipboard: Clipboard, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+    this.route.fragment.subscribe(f => {
+      const element = document.querySelector("#" + f)
+      if (element) element.scrollIntoView()
+    })
   }
 
   copyClipboard(str: string, marker: string) {
