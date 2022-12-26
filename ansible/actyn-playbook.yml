@@ -1,7 +1,7 @@
 ### Actyn web server
 - hosts: yacm_ws
   tasks:
-  - name: Deploy web server.
+  - name: Deploy web server
     copy: 
       remote_src: no 
       src: ../yacm_ws/target/yacm_ws-{{ version }}.jar
@@ -14,7 +14,7 @@
   #     state: restarted 
   #     enabled: yes
 
-  - name: Search already started server.
+  - name: Search already started server
     shell: ps -x | grep 'yacm_ws' | grep -v 'grep' | awk '{print $1}'
     register: pid
     
@@ -23,7 +23,7 @@
   #     msg: "{{pid}}"
       
 
-  - name: Kill already started server.
+  - name: Kill already started server
     shell: kill {{ pid.stdout_lines[0] }}
     when: pid.stdout != ""
 
@@ -44,14 +44,14 @@
 # TODO: make actyn user on each server with same uid  password
 - hosts: yacm_ws_ldap
   tasks:
-  - name: Deploy ldap node server.
+  - name: Deploy ldap node server
     copy: 
       remote_src: no 
       src: ../yacm_ws_ldap/target/yacm_ws_ldap-{{ version }}.jar
       dest: /root
       force: yes
   
-  - name: Search already started server.
+  - name: Search already started server
     shell: ps -x | grep 'yacm_ws_ldap' | grep -v 'grep' | awk '{print $1}'
     register: pid
     
@@ -60,7 +60,7 @@
   #     msg: "{{pid}}"
       
 
-  - name: Kill already started server.
+  - name: Kill already started server
     shell: kill {{ pid.stdout_lines[0] }}
     when: pid.stdout != ""
 
