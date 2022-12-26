@@ -8,11 +8,11 @@
       dest: /root
       force: yes
 
-  - name: Restart nginx.
-    service: 
-      name: nginx 
-      state: restarted 
-      enabled: yes
+  # - name: Restart nginx.
+  #   service: 
+  #     name: nginx 
+  #     state: restarted 
+  #     enabled: yes
 
   - name: Search already started server.
     shell: ps -x | grep 'yacm_ws' | grep -v 'grep' | awk '{print $1}'
